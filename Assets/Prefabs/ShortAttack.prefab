@@ -72,12 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 206955437
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d677d4153f4bce64f8fec27ae91608f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4016ea8b28a1e2408b948c1022c9887, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 3.3333333, y: 3.3333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +101,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.5, y: 2.5}
-    newSize: {x: 2, y: 2}
+    newSize: {x: 3.3333333, y: 3.3333333}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5583880057162351559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32edab594944a424b894231808800b3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 27ae6d6edd93ac349b90bd7d4d8005ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 0

@@ -150,10 +150,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6411874192046153823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce5720f9cca29648accad80741aedff, type: 3}
+  m_Script: {fileID: 11500000, guid: 16768bf06193f7441a60d51d2378c7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6411874193081888269}
 --- !u!1 &6411874192308510475
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,10 +221,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6411874192308510475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce5720f9cca29648accad80741aedff, type: 3}
+  m_Script: {fileID: 11500000, guid: 16768bf06193f7441a60d51d2378c7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6411874193081888269}
 --- !u!1 &6411874192496060077
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,10 +292,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6411874192496060077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce5720f9cca29648accad80741aedff, type: 3}
+  m_Script: {fileID: 11500000, guid: 16768bf06193f7441a60d51d2378c7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6411874193081888269}
 --- !u!1 &6411874192617888867
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,10 +363,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6411874192617888867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce5720f9cca29648accad80741aedff, type: 3}
+  m_Script: {fileID: 11500000, guid: 16768bf06193f7441a60d51d2378c7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6411874193081888269}
 --- !u!1 &6411874193081888266
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,12 +447,12 @@ SpriteRenderer:
   m_SortingLayerID: 1375571251
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: aa711ac775ea76f4aad09f9b8c339950, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9271fd5d95edfe441bacd134b9b025d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 0.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -497,7 +497,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.7, y: 0.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -514,15 +514,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6411874193081888266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2e36cb6c6d5de4e99efbd9d14ed35f, type: 3}
+  m_Script: {fileID: 11500000, guid: 75a1f8dc87edd014cb11c7b9d433feb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   status:
-    healthPoint: 20
-    manaPoint: 20
-    moveSpeed: 5
-    attackPower: 1
-    attackSpeed: 0.5
+    healthPoint: 0
+    manaPoint: 0
+    moveSpeed: 0
+    attackPower: 0
+    attackSpeed: 0
     weapon:
       name: 
       attackType: 
@@ -537,8 +537,8 @@ MonoBehaviour:
   isTouchLeft: 0
   isTouchUp: 0
   isTouchDown: 0
-  strangth: 5
-  intelligence: 5
+  strangth: 0
+  intelligence: 0
   animator: {fileID: 170130266}
   attackPrefab: {fileID: 0}
   attackTarget: {fileID: 0}
@@ -555,7 +555,7 @@ Animator:
   m_GameObject: {fileID: 6411874193081888266}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e64fc8bf3e3f1847bbbab40f019b103, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -634,7 +634,7 @@ SpriteRenderer:
   m_SortingLayerID: 206955437
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4b7f2e1cd58e5248ab92797ce0786fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68b7d96e5e5d0e54b9f6b7829d5723f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

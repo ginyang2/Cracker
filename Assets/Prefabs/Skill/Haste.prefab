@@ -40,12 +40,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2305908874560380744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf8735921770a6499811558aad40f0d, type: 3}
+  m_Script: {fileID: 11500000, guid: b13bc1ed20246f9449beaa0888b0c062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillImage: {fileID: 0}
-  skillImageSetting: {fileID: 21300000, guid: e6003b36554427447a67ec2ad0cba457, type: 3}
-  spendMana: 5
-  coolTime: 10
+  skillImageSetting: {fileID: 21300000, guid: 7bc946dcfabd8e64692209d0e7797002, type: 3}
+  spendMana: 0
+  coolTime: 0
   cooldown: 0
   conTime: 10
