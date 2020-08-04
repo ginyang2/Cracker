@@ -8,7 +8,6 @@ public class Enemy1 : Enemy
     private Player player = null;
     [SerializeField]
     private float attackRange;
-    public float attackPower;
     private bool isAttack;
     private bool targetting =false;
     private float distance;

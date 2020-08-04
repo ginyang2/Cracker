@@ -6,6 +6,7 @@ using UnityEngine;
 public class Weapon
 {
     public string name;
+    [SerializeField]
     private int power;
     public int Power
     {

@@ -9,7 +9,7 @@ public abstract class Attack : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Enemy1 enemy = collision.GetComponent<Enemy1>();
+            Enemy enemy = collision.GetComponent<Enemy>();
             enemy.MHP(damage);
         }
     }

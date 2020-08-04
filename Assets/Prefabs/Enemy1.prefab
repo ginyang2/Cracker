@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statText: {fileID: 0}
-  lerpSpeed: 0
+  lerpSpeed: 3
 --- !u!1 &3334055901646456709
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,13 +282,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status:
-    healthPoint: 0
+    healthPoint: 10
     manaPoint: 0
-    moveSpeed: 0
-    attackPower: 0
-    attackSpeed: 0
+    moveSpeed: 3
+    attackPower: 5
+    attackSpeed: 1
     weapon:
       name: 
+      power: 0
       attackType: 
       weaponType: 
       elementType: 
@@ -297,8 +298,7 @@ MonoBehaviour:
       image: {fileID: 0}
   hp: {fileID: 3441871778140269091}
   healthGroup: {fileID: 3650242626963351785}
-  attackRange: 0
-  attackPower: 0
+  attackRange: 2
 --- !u!225 &3411659168227506675
 CanvasGroup:
   m_ObjectHideFlags: 0

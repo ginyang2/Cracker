@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillImage: {fileID: 0}
   skillImageSetting: {fileID: 21300000, guid: 7cb90fc455d38644ca8b4458230c8ac5, type: 3}
-  spendMana: 0
-  coolTime: 0
+  spendMana: 5
+  coolTime: 30
   cooldown: 0
   healPower: 0

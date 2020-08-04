@@ -134,11 +134,14 @@ public class Player : Character
             angle -= 45;
             attackPrefab.transform.localScale = new Vector3(status.weapon.range, status.weapon.range);
         }
-        else if(status.weapon.AttackType == 1)
+        else if (status.weapon.AttackType == 1)
         {
             LongAttack longAttack = attackPrefab.GetComponent<LongAttack>();
             longAttack.targetPos = targetPos;
         }
+        attackPrefab.GetComponent<Attack>().damage = (int)status.attackPower;
+        Debug.Log(attackPrefab.GetComponent<Attack>().damage);
+        Debug.Log(status.attackPower);
         attackPrefab.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         yield return new WaitForSeconds(status.attackSpeed);
         isAttack = false;

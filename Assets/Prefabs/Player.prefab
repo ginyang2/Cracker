@@ -518,11 +518,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status:
-    healthPoint: 0
-    manaPoint: 0
-    moveSpeed: 0
-    attackPower: 0
-    attackSpeed: 0
+    healthPoint: 20
+    manaPoint: 20
+    moveSpeed: 5
+    attackPower: 5
+    attackSpeed: 1
     weapon:
       name: 
       attackType: 

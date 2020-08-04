@@ -9,6 +9,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("플레이어 접촉");
             if (!mapevent.clear && !mapevent.close)
                 mapevent.CloseDoor();
         }
