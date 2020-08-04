@@ -11,7 +11,7 @@ public class DoorTrigger : MonoBehaviour
         {
             Debug.Log("플레이어 접촉");
             if (!mapevent.clear && !mapevent.close)
-                mapevent.CloseDoor();
+                mapevent.CloseDoor(collision.gameObject.GetComponent<Player>(),gameObject.name);
         }
     }
 }

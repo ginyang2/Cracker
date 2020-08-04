@@ -298,7 +298,7 @@ MonoBehaviour:
       image: {fileID: 0}
   hp: {fileID: 3441871778140269091}
   healthGroup: {fileID: 3650242626963351785}
-  attackRange: 2
+  attackRange: 1
 --- !u!225 &3411659168227506675
 CanvasGroup:
   m_ObjectHideFlags: 0

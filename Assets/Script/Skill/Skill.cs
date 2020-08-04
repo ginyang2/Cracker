@@ -6,13 +6,23 @@ using UnityEngine.UI;
 [System.Serializable]
 abstract public class Skill:MonoBehaviour
 {
+    public bool targetting = false;
     public Image skillImage;
     public Sprite skillImageSetting;
     public float spendMana;
     public float coolTime;
     public bool cooldown = false;
+    public int range;
 
     virtual public IEnumerator UseSkill(Player player)
+    {
+        skillImage.fillAmount = 0;
+        player.MMP(spendMana);
+        CoolDown();
+        StartCoroutine(CoolTime(coolTime));
+        yield return null;
+    }
+    virtual public IEnumerator UseSkill(Player player, Vector3 target)
     {
         skillImage.fillAmount = 0;
         player.MMP(spendMana);

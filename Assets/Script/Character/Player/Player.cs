@@ -72,7 +72,7 @@ public class Player : Character
         //공격
         if (Input.GetKey(KeyCode.A))
         {
-            AttackReady();
+            AttackReady(new Vector3(status.weapon.range, status.weapon.range));
             if (Input.GetMouseButtonDown(0) && !isAttack) {
                 if (status.weapon.AttackType == 0)
                     StartCoroutine(Attack(mainCamera.ScreenToWorldPoint(Input.mousePosition)));
@@ -88,14 +88,66 @@ public class Player : Character
         if (Input.GetKeyUp(KeyCode.A))
             attackRangeCirecle.SetActive(false);
         //스킬 사용
-        if (Input.GetKeyDown(KeyCode.Q) && GameManager.Instance.skills[0].Check(this))
+        if (Input.GetKey(KeyCode.Q) && GameManager.Instance.skills[0].targetting)
+        {
+            AttackReady(new Vector3(GameManager.Instance.skills[0].range, GameManager.Instance.skills[0].range));
+            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[0].Check(this))
+            {
+                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[0].range)
+                {
+                    StartCoroutine(GameManager.Instance.skills[0].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
+                }
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Q) && GameManager.Instance.skills[0].Check(this))
             StartCoroutine(GameManager.Instance.skills[0].UseSkill(this));
-        if (Input.GetKeyDown(KeyCode.W) && GameManager.Instance.skills[1].Check(this))
+        if (Input.GetKeyUp(KeyCode.Q))
+            attackRangeCirecle.SetActive(false);
+        if (Input.GetKey(KeyCode.W) && GameManager.Instance.skills[1].targetting)
+        {
+            AttackReady(new Vector3(GameManager.Instance.skills[1].range, GameManager.Instance.skills[1].range));
+            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[1].Check(this))
+            {
+                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[1].range)
+                {
+                    StartCoroutine(GameManager.Instance.skills[1].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
+                }
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.W) && GameManager.Instance.skills[1].Check(this))
             StartCoroutine(GameManager.Instance.skills[1].UseSkill(this));
-        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.skills[2].Check(this))
+        if (Input.GetKeyUp(KeyCode.W))
+            attackRangeCirecle.SetActive(false);
+        if (Input.GetKey(KeyCode.E) && GameManager.Instance.skills[2].targetting)
+        {
+            AttackReady(new Vector3(GameManager.Instance.skills[2].range, GameManager.Instance.skills[2].range));
+            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[2].Check(this))
+            {
+                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[2].range)
+                {
+                    StartCoroutine(GameManager.Instance.skills[2].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
+                }
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.skills[2].Check(this))
             StartCoroutine(GameManager.Instance.skills[2].UseSkill(this));
-        if (Input.GetKeyDown(KeyCode.R) && GameManager.Instance.skills[3].Check(this))
+        if (Input.GetKeyUp(KeyCode.E))
+            attackRangeCirecle.SetActive(false);
+        if (Input.GetKey(KeyCode.R) && GameManager.Instance.skills[3].targetting)
+        {
+            AttackReady(new Vector3(GameManager.Instance.skills[3].range, GameManager.Instance.skills[3].range));
+            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[3].Check(this))
+            {
+                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[3].range)
+                {
+                    StartCoroutine(GameManager.Instance.skills[3].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
+                }
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.R) && GameManager.Instance.skills[3].Check(this))
             StartCoroutine(GameManager.Instance.skills[3].UseSkill(this));
+        if (Input.GetKeyUp(KeyCode.R))
+            attackRangeCirecle.SetActive(false);
     }
 
     void Move()
@@ -118,10 +170,10 @@ public class Player : Character
         }
     }
 
-    void AttackReady()
+    void AttackReady(Vector3 size)
     {
         attackRangeCirecle.SetActive(true);
-        attackRangeCirecle.transform.localScale = new Vector3(status.weapon.range, status.weapon.range);
+        attackRangeCirecle.transform.localScale = size;
     }
 
     IEnumerator Attack(Vector2 targetPos)
@@ -149,5 +201,10 @@ public class Player : Character
     public void MMP(float spend)
     {
         mp.MyCurrentValue -= spend;
+    }
+
+    public void TP(Vector3 position)
+    {
+        transform.position = position;
     }
 }
