@@ -33,8 +33,7 @@ public class GameManager : MonoBehaviour
     }
     public int score;//점수
     public bool gameOver;
-    public List<Weapon> weapons;
-    public int weaponIdx;
+    public Weapon weapon;
     //던전 관련 변수
     public int enemyNum;
     public MapEvent mapEvent;

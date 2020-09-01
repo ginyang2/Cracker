@@ -131,4 +131,5 @@ public class Weapon
 
     public float range;
     public Sprite image;
+    public Rune rune = null;
 }

@@ -12,9 +12,6 @@ public class Player : Character
     public bool isTouchLeft;
     public bool isTouchUp;
     public bool isTouchDown;
-    //능력치관련
-    public float strangth;
-    public float intelligence;
     //애니메이션
     public Animator animator;
     //공격관련
@@ -30,20 +27,10 @@ public class Player : Character
     {
         Debug.Log("Start");
         base.Start();
-        status.weapon = GameManager.Instance.weapons[GameManager.Instance.weaponIdx];
+        status.weapon = GameManager.Instance.weapon;
         attackRangeCirecle.SetActive(false);
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        switch (status.weapon.WeaponType)
-        {
-            case 0:
-            case 1:
-            case 3:
-                status.attackPower = status.weapon.Power + strangth;
-                break;
-            case 2:
-                status.attackPower = status.weapon.Power + intelligence;
-                break;
-        }
+        status.attackPower = status.weapon.Power;
         //HP,MPUI 초기화
         mp.Initialize(status.manaPoint, status.manaPoint);
     }

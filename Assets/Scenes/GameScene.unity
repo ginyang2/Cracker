@@ -303,8 +303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   gameOver: 0
-  weapons:
-  - name: Sword
+  weapon:
+    name: 
     power: 5
     attackType: Short
     weaponType: Sword
@@ -313,7 +313,7 @@ MonoBehaviour:
       type: 3}
     range: 2
     image: {fileID: 0}
-  weaponIdx: 0
+    rune: {fileID: 0}
   enemyNum: 0
   mapEvent: {fileID: 0}
   inRoom: 0

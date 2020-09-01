@@ -25,7 +25,7 @@ public class Setting : MonoBehaviour
 
     public void settingWeapon()
     {
-        Weapon weapon = GameManager.Instance.weapons[GameManager.Instance.weaponIdx];
+        Weapon weapon = GameManager.Instance.weapon;
         weaponPower.text = "무기 공격력 : " + weapon.Power;
 
     }
