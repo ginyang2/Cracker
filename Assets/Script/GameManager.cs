@@ -10,29 +10,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance
     {
         get
-        {
-            if (instance == null)
-            {
-                var obj = FindObjectOfType<GameManager>();
-                if (obj != null)
-                {
-                    instance = obj;
-                }
-                else
-                {
-                    var newSingleton = new GameObject("GameManager").AddComponent<GameManager>();
-                    instance = newSingleton;
-                }
-            }
+        {            
             return instance;
         }
         private set
         {
             instance = value;
         }
-
     }
-    public int score;//점수
+    public int score = 0;//점수
     public bool gameOver;
     public Weapon weapon;
     //던전 관련 변수
@@ -48,18 +34,8 @@ public class GameManager : MonoBehaviour
     //게임 오버 관련
     public GameObject gameOverPannel;
     public Text scoreText;
-    void Awake()
-    {
-        if (scoreText == null)
-            Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
-    }
-
     private void Start()
     {
-        DontDestroyOnLoad(this);
-        Debug.Log("Manager Start");
         for (int i = 0; i < skills.Count; i++)
         {
             skills[i].ImageSetting(images[i]);
@@ -113,5 +89,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
         Destroy(this.gameObject);
+    }
+
+    public void ChangeNextStage()
+    {
+        LevelManager levelManager = GameObject.FindObjectOfType<LevelManager>();
+        levelManager.RemoveAllMap();
+        levelManager.MakeLevel();
+        Player player = GameObject.FindObjectOfType<Player>();
+        player.TP(new Vector3(0, 0));
+        currentFloor++;
+        score++;
     }
 }

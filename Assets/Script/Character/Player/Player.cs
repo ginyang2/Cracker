@@ -192,6 +192,7 @@ public class Player : Character
     public void TP(Vector3 position)
     {
         transform.position = position;
+        targetPos = transform.position;
     }
 
     void InitialzeStatus()
