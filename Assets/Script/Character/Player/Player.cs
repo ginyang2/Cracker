@@ -21,8 +21,6 @@ public class Player : Character
     public GameObject attackRangeCirecle;
     //UI관련
     public Stat mp;
-    //스킬관련
-    [SerializeField]
     protected override void Start()
     {
         Debug.Log("Start");
@@ -33,6 +31,7 @@ public class Player : Character
         status.attackPower = status.weapon.Power;
         //HP,MPUI 초기화
         mp.Initialize(status.manaPoint, status.manaPoint);
+        Time.timeScale = 1;
     }
     void Update()
     {
@@ -193,5 +192,10 @@ public class Player : Character
     public void TP(Vector3 position)
     {
         transform.position = position;
+    }
+
+    void InitialzeStatus()
+    {
+        //status = GameManager.Instance.status;
     }
 }

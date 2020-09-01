@@ -43,9 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8c8b4e918d7ac4ab9f282ac650675c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetting: 0
   skillImage: {fileID: 0}
   skillImageSetting: {fileID: 21300000, guid: 7cb90fc455d38644ca8b4458230c8ac5, type: 3}
   spendMana: 5
   coolTime: 30
   cooldown: 0
-  healPower: 0
+  range: 0
+  healPower: 5

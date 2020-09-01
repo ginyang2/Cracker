@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 //인게임과 관련된 것들을 게임 씬에서 관할한다.
 public class GameManager : MonoBehaviour
 {
@@ -44,19 +45,16 @@ public class GameManager : MonoBehaviour
     //스킬 관련 변수
     public List<Skill> skills;
     public List<Image> images;
-    /*void Awake()
+    //게임 오버 관련
+    public GameObject gameOverPannel;
+    public Text scoreText;
+    void Awake()
     {
-        if (instance == null)
-            instance = this;
-
-        else if (instance != this)
-        {
-            Debug.Log(score);
+        if (scoreText == null)
             Destroy(gameObject);
-        }
 
         DontDestroyOnLoad(gameObject);
-    }*/
+    }
 
     private void Start()
     {
@@ -67,6 +65,7 @@ public class GameManager : MonoBehaviour
             skills[i].ImageSetting(images[i]);
         }
         StartCoroutine(FloorApear());
+        gameOverPannel.SetActive(false);
     }
     private void Update()
     {
@@ -78,6 +77,8 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Time.timeScale = 0;
+        gameOverPannel.SetActive(true);
+        scoreText.text = score + "층";        
     }
 
     //던전 관련 함수
@@ -101,5 +102,16 @@ public class GameManager : MonoBehaviour
         floorText.text = currentFloor + "층";
         yield return new WaitForSeconds(3f);
         floorText.gameObject.SetActive(false);
+    }
+
+    void LoadGamedData()
+    {
+         //DataController.Instance.status
+    }
+
+    public void MoveMain()
+    {
+        SceneManager.LoadScene("MainScene");
+        Destroy(this.gameObject);
     }
 }

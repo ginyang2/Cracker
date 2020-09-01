@@ -846,6 +846,7 @@ MonoBehaviour:
   - {fileID: 2305908874560380743, guid: 45367389c8bc62a4fbcd2eb97d520d0d, type: 3}
   - {fileID: 6611228114517930457, guid: 670d3ad72d57da64784ab4328afed8de, type: 3}
   - {fileID: 3903105947387497852, guid: 26b4cbe5e1bc5bf4fb63527de2677b2f, type: 3}
+  setWeaponName: NormalSword
   Weapons:
   - name: NormalSword
     power: 5
