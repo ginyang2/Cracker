@@ -14,6 +14,12 @@ public class LevelManager : MonoBehaviour
     public Grid Wall;
     public Transform startPoint;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        MakeLevel();
+    }
+
     public void MakeLevel()
     {
         MakeRoom();

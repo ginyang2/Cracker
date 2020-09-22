@@ -10,7 +10,20 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance
     {
         get
-        {            
+        {
+            if (instance == null)
+            {
+                var obj = FindObjectOfType<GameManager>();
+                if (obj != null)
+                {
+                    instance = obj;
+                }
+                else
+                {
+                    var newSingleton = new GameObject("GameManager").AddComponent<GameManager>();
+                    instance = newSingleton;
+                }
+            }
             return instance;
         }
         private set
@@ -36,12 +49,13 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     private void Start()
     {
+        Debug.Log("Manager Start");
         for (int i = 0; i < skills.Count; i++)
         {
             skills[i].ImageSetting(images[i]);
         }
-        StartCoroutine(FloorApear());
         gameOverPannel.SetActive(false);
+        StartCoroutine(FloorApear());
     }
     private void Update()
     {
@@ -68,12 +82,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FloorApear()
     {
-        //게임오브젝트 중복을 막기위한 임시 처리 나중에 선배에게 물어보고 고치기
-        if (floorText != true)
-        {
-            Debug.Log("UnTouch Text");
-            Destroy(this);
-        }
         floorText.gameObject.SetActive(true);
         floorText.text = currentFloor + "층";
         yield return new WaitForSeconds(3f);
@@ -100,5 +108,6 @@ public class GameManager : MonoBehaviour
         player.TP(new Vector3(0, 0));
         currentFloor++;
         score++;
+        StartCoroutine(FloorApear());
     }
 }
