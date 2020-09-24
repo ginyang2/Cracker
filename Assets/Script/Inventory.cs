@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public List<int> ItemIdList;
     public int size;
     public GameObject emptyPannel;
     public GameObject basePannel;
     // Start is called before the first frame update
     void Start()
     {
-        size = ItemIdList.Count;
+        size = DataController.itemIdData.Count;
         Initialize();
     }
 
@@ -24,7 +23,7 @@ public class Inventory : MonoBehaviour
 
     void Initialize()
     {
-        foreach(int i in ItemIdList)
+        foreach(int i in DataController.itemIdData)
         {
             CreateItemPannel(i);
         }
@@ -37,7 +36,5 @@ public class Inventory : MonoBehaviour
         Texture2D texture = Resources.Load(ItemDataManager.FindPath(id).ToString()) as Texture2D;
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         image.sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
-    }
-
-    
+    }    
 }

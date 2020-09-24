@@ -29,10 +29,4 @@ public class Setting : MonoBehaviour
         weaponPower.text = "무기 공격력 : " + weapon.Power;
 
     }
-
-    public void settingStatus()
-    {
-        healthPoint.text = DataController.Instance.status.healthPoint.ToString();
-        manaPoint.text = DataController.Instance.status.manaPoint.ToString();
-    }
 }

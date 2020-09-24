@@ -22,24 +22,19 @@ public class MapEvent : MonoBehaviour
 
     public void CloseDoor(Player player, string touchedPosition)
     {
-        Debug.Log(touchedPosition);
         switch (touchedPosition)
         {
             case "Up":
                 player.TP(tpPosition[0].position);
-                Debug.Log(transform.position + "to" + tpPosition[0].position);
                 break;
             case "Down":
                 player.TP(tpPosition[1].position);
-                Debug.Log(transform.position + "to" + tpPosition[1].position);
                 break;
             case "Left":
                 player.TP(tpPosition[2].position);
-                Debug.Log(transform.position + "to" + tpPosition[2].position);
                 break;
             case "Right":
                 player.TP(tpPosition[3].position);
-                Debug.Log(transform.position + "to" + tpPosition[3].position);
                 break;
         }
         for (int i = 0; i < enemys.Count; i++)

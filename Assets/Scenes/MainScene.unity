@@ -804,7 +804,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2139599412}
-  - component: {fileID: 2139599411}
   m_Layer: 0
   m_Name: DataControlor
   m_TagString: Untagged
@@ -812,67 +811,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2139599411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139599410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de4269404941ab47b3d6d07fc3e38f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highFloor: 0
-  status:
-    healthPoint: 0
-    manaPoint: 0
-    moveSpeed: 0
-    attackPower: 0
-    attackSpeed: 0
-    weapon:
-      name: 
-      power: 0
-      attackType: 
-      weaponType: 
-      elementType: 
-      attackPrefab: {fileID: 0}
-      range: 0
-      image: {fileID: 0}
-      rune: {fileID: 0}
-  setSkill:
-  - {fileID: 860380375642447396, guid: 4a9ca5ef2a5a0ce41857725b078d858a, type: 3}
-  - {fileID: 2305908874560380743, guid: 45367389c8bc62a4fbcd2eb97d520d0d, type: 3}
-  - {fileID: 6611228114517930457, guid: 670d3ad72d57da64784ab4328afed8de, type: 3}
-  - {fileID: 3903105947387497852, guid: 26b4cbe5e1bc5bf4fb63527de2677b2f, type: 3}
-  setWeaponName: NormalSword
-  Weapons:
-  - name: NormalSword
-    power: 5
-    attackType: Short
-    weaponType: Sword
-    elementType: 
-    attackPrefab: {fileID: 5583880057162351559, guid: 6f3a24d09405b3f419848871188d00e2,
-      type: 3}
-    range: 1.5
-    image: {fileID: 0}
-    rune: {fileID: 0}
-  - name: NormalBow
-    power: 5
-    attackType: Long
-    weaponType: Bow
-    elementType: 
-    attackPrefab: {fileID: 2845124502154682004, guid: 21604c2d2739eaf45aa7806bc1f1d39e,
-      type: 3}
-    range: 2
-    image: {fileID: 0}
-    rune: {fileID: 0}
-  Skills:
-  - {fileID: 860380375642447396, guid: 4a9ca5ef2a5a0ce41857725b078d858a, type: 3}
-  - {fileID: 2305908874560380743, guid: 45367389c8bc62a4fbcd2eb97d520d0d, type: 3}
-  - {fileID: 6611228114517930457, guid: 670d3ad72d57da64784ab4328afed8de, type: 3}
-  - {fileID: 3903105947387497852, guid: 26b4cbe5e1bc5bf4fb63527de2677b2f, type: 3}
 --- !u!4 &2139599412
 Transform:
   m_ObjectHideFlags: 0

@@ -68,7 +68,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverPannel.SetActive(true);
-        scoreText.text = score + "층";        
+        scoreText.text = "답파계층 : " + score + "층";
+        if (currentFloor > DataController.floorData.highFloor)
+            DataController.floorData.highFloor = currentFloor;
+        DataController.SaveData();
     }
 
     //던전 관련 함수
