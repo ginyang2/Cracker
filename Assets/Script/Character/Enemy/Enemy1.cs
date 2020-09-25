@@ -76,7 +76,6 @@ public class Enemy1 : Enemy
     IEnumerator Attack(Character player)
     {
         isAttack = true;
-        Debug.Log("Attacking" + distance);
         player.MHP((int)status.attackPower);
         yield return new WaitForSeconds(status.attackSpeed);
         isAttack = false;

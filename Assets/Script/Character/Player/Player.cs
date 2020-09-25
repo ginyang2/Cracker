@@ -178,8 +178,6 @@ public class Player : Character
             longAttack.targetPos = targetPos;
         }
         attackPrefab.GetComponent<Attack>().damage = (int)status.attackPower;
-        Debug.Log(attackPrefab.GetComponent<Attack>().damage);
-        Debug.Log(status.attackPower);
         attackPrefab.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         yield return new WaitForSeconds(status.attackSpeed);
         isAttack = false;
