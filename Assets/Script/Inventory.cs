@@ -9,9 +9,12 @@ public class Inventory : MonoBehaviour
     public GameObject emptyPannel;
     public GameObject basePannel;
     // Start is called before the first frame update
+    public Image selectedItemImage;
+    public Text selectedItemText;
     void Start()
     {
-        size = DataController.itemIdData.Count;
+        DataController.Load();
+        size = DataController.itemInventory.itemIds.Count;
         Initialize();
     }
 
@@ -23,7 +26,7 @@ public class Inventory : MonoBehaviour
 
     void Initialize()
     {
-        foreach(int i in DataController.itemIdData)
+        foreach(int i in DataController.itemInventory.itemIds)
         {
             CreateItemPannel(i);
         }
@@ -36,5 +39,15 @@ public class Inventory : MonoBehaviour
         Texture2D texture = Resources.Load(ItemDataManager.FindPath(id).ToString()) as Texture2D;
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         image.sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
+        InventoryItemPannel itemPan = itemPannel.GetComponent<InventoryItemPannel>();
+        itemPan.item.Id = id;
     }    
+
+    public void Affect(int id)
+    {
+        selectedItemText.text = GameData.FindData(id, "ItemData", "name").ToString();
+        Texture2D texture = Resources.Load(ItemDataManager.FindPath(id).ToString()) as Texture2D;
+        Rect rect = new Rect(0, 0, texture.width, texture.height);
+        selectedItemImage.sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
+    }
 }

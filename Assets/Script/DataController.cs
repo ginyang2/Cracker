@@ -9,24 +9,31 @@ public class FloorData
     public int highFloor; //최고 층수
     public int currentFloor;
 }
+
+public class InventoryData{
+    public string inventoryName;
+    public int count;
+    public List<int> itemIds;
+}
 public class DataController
 {
     public static FloorData floorData;   //최고 층수
     public static List<Weapon> weapons;    //보유무기정보
     public static List<Skill> skills;      //보유스킬정보
-    public static List<int> itemIdData;
+    public static InventoryData itemInventory; //인벤토리 아이템
 
     public static void SaveData()
     {
         File.WriteAllText(Application.dataPath + "/Skills.json", JsonUtility.ToJson(skills));
         File.WriteAllText(Application.dataPath + "/Weapons.json", JsonUtility.ToJson(weapons));
         File.WriteAllText(Application.dataPath + "/Floor.json", JsonUtility.ToJson(floorData));
+        File.WriteAllText(Application.dataPath + "/ItemInventory.json", JsonUtility.ToJson(itemInventory));
         Debug.Log("저장 완료");
     }
     public static void Load()
     {
-        File.WriteAllText(Application.dataPath + "/Skills.json", JsonUtility.ToJson(skills));
-        File.WriteAllText(Application.dataPath + "/Weapons.json", JsonUtility.ToJson(weapons));
+        string temp = File.ReadAllText(Application.dataPath + "/ItemInventory.json");
+        itemInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
         Debug.Log("불러오기 완료");
     }
 }

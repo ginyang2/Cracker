@@ -521,7 +521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab77a017340adf4883aff8dcc7fad97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemIdList: 01000000010000000200000003000000010000000100000002000000030000000100000003000000
   size: 10
   emptyPannel: {fileID: 7542976617466344224, guid: d494dddebc959f14e982810b3d1c3c61,
     type: 3}
