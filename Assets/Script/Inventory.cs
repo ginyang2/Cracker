@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         DataController.Load();
-        size = DataController.itemInventory.itemIds.Count;
+        size = DataController.itemInventory.maxCount;
         Initialize();
     }
 
@@ -26,13 +26,13 @@ public class Inventory : MonoBehaviour
 
     void Initialize()
     {
-        foreach(int i in DataController.itemInventory.itemIds)
+        foreach(string i in DataController.itemInventory.itemIds)
         {
             CreateItemPannel(i);
         }
     }
 
-    void CreateItemPannel(int id)
+    void CreateItemPannel(string id)
     {
         var itemPannel = Instantiate(emptyPannel, basePannel.transform);
         var image = itemPannel.GetComponent<Image>();
@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
         itemPan.item.Id = id;
     }    
 
-    public void Affect(int id)
+    public void Affect(string id)
     {
         selectedItemText.text = GameData.FindData(id, "ItemData", "name").ToString();
         Texture2D texture = Resources.Load(ItemDataManager.FindPath(id).ToString()) as Texture2D;

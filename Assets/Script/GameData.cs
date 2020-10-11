@@ -7,7 +7,7 @@ public class GameData : MonoBehaviour
     static List<Dictionary<string, object>> itemData = CSVReader.Read("ItemData");
     static List<Dictionary<string, object>> weaponData = CSVReader.Read("WeaponData");
 
-    public static object FindData(int id,string dataSetName,string findDataset = "path")
+    public static object FindData(string id,string dataSetName,string findDataset = "path")
     {
         List<Dictionary<string, object>> data;
         switch (dataSetName)

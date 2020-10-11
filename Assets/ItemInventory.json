@@ -1,5 +1,1 @@
-{
-  "inventoryName": "Item",
-  "count": 10,
-  "itemIds": [ 2, 2, 1, 2, 3 ]
-}
+{"inventoryName":"item","maxCount":10,"itemIds":["1","2","1","2","3"]}

@@ -6,7 +6,7 @@ public class ItemDataManager
 {
     static List<Dictionary<string, object>> data = CSVReader.Read("ItemData");
 
-    public static object FindPath(int id)
+    public static object FindPath(string id)
     {
         foreach (Dictionary<string, object> entry in data)
         {

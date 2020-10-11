@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     //게임 오버 관련
     public GameObject gameOverPannel;
     public Text scoreText;
+    public Text finalScoreText;
     private void Start()
     {
         //Debug.Log("Manager Start");
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         gameOverPannel.SetActive(true);
         scoreText.text = "답파계층 : " + score + "층";
+        finalScoreText.text = "최종계층 : " + currentFloor + "층";
         if (currentFloor > DataController.floorData.highFloor)
             DataController.floorData.highFloor = currentFloor;
         DataController.SaveData();

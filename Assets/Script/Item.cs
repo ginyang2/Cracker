@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item
 {
     public string Name;
-    public int Id;
+    public string Id;
     public Sprite Image;
     //추후 추가
 }

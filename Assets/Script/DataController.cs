@@ -12,14 +12,23 @@ public class FloorData
 
 public class InventoryData{
     public string inventoryName;
-    public int count;
-    public List<int> itemIds;
+    public int maxCount;
+    public List<string> itemIds;
 }
+
+public class PlayerSkills
+{
+    public Skill skill1;
+    public Skill skill2;
+    public Skill skill3;
+    public Skill skill4;
+}
+
 public class DataController
 {
-    public static FloorData floorData;   //최고 층수
-    public static List<Weapon> weapons;    //보유무기정보
-    public static List<Skill> skills;      //보유스킬정보
+    public static FloorData floorData; //   //최고 층수
+    public static List<Weapon> weapons;//    //보유무기정보
+    public static List<Skill> skills; //      //보유스킬정보
     public static InventoryData itemInventory; //인벤토리 아이템
 
     public static void SaveData()
@@ -34,6 +43,8 @@ public class DataController
     {
         string temp = File.ReadAllText(Application.dataPath + "/ItemInventory.json");
         itemInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
+        temp = File.ReadAllText(Application.dataPath + "/Floor.json");
+        floorData = JsonUtility.FromJson<FloorData>(temp.ToString());
         Debug.Log("불러오기 완료");
     }
 }
