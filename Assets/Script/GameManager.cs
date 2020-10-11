@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     private void Start()
     {
-        Debug.Log("Manager Start");
+        //Debug.Log("Manager Start");
         for (int i = 0; i < skills.Count; i++)
         {
             skills[i].ImageSetting(images[i]);

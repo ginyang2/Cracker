@@ -15,6 +15,7 @@ public class StageMover : MonoBehaviour
         Debug.Log(collision.tag);
         if (collision.CompareTag("Player") && !loading)
         {
+            loading = true;
             GameManager.Instance.ChangeNextStage();
             Debug.Log("NextStage");
         }

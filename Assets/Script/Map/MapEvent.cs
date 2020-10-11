@@ -60,7 +60,6 @@ public class MapEvent : MonoBehaviour
             if (enemys[i] == null)
             {
                 enemys.RemoveAt(i);
-                Debug.Log(enemys);
             }
         }
         door.SetActive(false);

@@ -14,7 +14,7 @@ abstract public class Character : MonoBehaviour
 
     public virtual void MHP(int damage)
     {
-        Debug.Log("-" + damage);
+        //Debug.Log("-" + damage);
         hp.MyCurrentValue -= damage;
     }
 }
