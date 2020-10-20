@@ -13,7 +13,7 @@ public class InventoryItemPannel : MonoBehaviour
 
     public void ClickAction()
     {
-        Inventory inventoryManager = GameObject.FindObjectOfType<Inventory>();
-        inventoryManager.Affect(item.Id);
+        ObjectScene sceneManager = GameObject.FindObjectOfType<ObjectScene>();
+        sceneManager.Affect(item.Id);
     }
 }
