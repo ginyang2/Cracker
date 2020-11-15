@@ -1,4 +1,6 @@
-id,name,path
-1,포션1,SkillImages/1
-2,포션2,SkillImages/2
-3,포션3,SkillImages/3
+id,name,path,prefab
+1,BladWind,SkillImages/BladeWind,Prefabs/Skill/BladeWind
+2,GMDestroy,SkillImages/GMDestroy,Prefabs/Skill/GMDestroy
+3,Haste,SkillImages/Haste,Prefabs/Skill/Haste
+4,Heal,SkillImages/Heal,Prefabs/Skill/Heal
+5,Thrust,SkillImages/Thrust,Prefabs/Skill/Thrust

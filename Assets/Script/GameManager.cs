@@ -42,16 +42,18 @@ public class GameManager : MonoBehaviour
     //UI 관련 변수
     public Text floorText;
     //스킬 관련 변수
-    public List<Skill> skills;
-    public List<Image> images;
+    public Skill[] skills;
+    public Image[] images;
     //게임 오버 관련
     public GameObject gameOverPannel;
     public Text scoreText;
     public Text finalScoreText;
     private void Start()
     {
+        DataController.Load();
+        LoadGamedData();
         //Debug.Log("Manager Start");
-        for (int i = 0; i < skills.Count; i++)
+        for (int i = 0; i < skills.Length; i++)
         {
             skills[i].ImageSetting(images[i]);
         }
@@ -93,8 +95,14 @@ public class GameManager : MonoBehaviour
         floorText.gameObject.SetActive(false);
     }
 
-    void LoadGamedData()
+    private void LoadGamedData()
     {
+        for (int i = 0; i < 4; i++) {
+            Debug.Log(DataController.playerSetting.skillsId[i]);
+            DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "prefab");
+            GameObject tmp = Instantiate(Resources.Load(DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "prefab") as string) as GameObject);
+            skills[i] = tmp.GetComponent<Skill>();
+         }
          //DataController.Instance.status
     }
 

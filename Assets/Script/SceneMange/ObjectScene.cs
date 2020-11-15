@@ -9,6 +9,7 @@ public class ObjectScene : MonoBehaviour
     protected string usingDataset;
     public Image selectedItemImage;
     public Text selectedItemText;
+    public GameObject selectedItem;
 
     virtual protected void Start()
     {
@@ -16,11 +17,16 @@ public class ObjectScene : MonoBehaviour
         inventoryMaker = FindObjectOfType<InventoryMaking>();
     }
 
-    public void Affect(string id)
+    virtual public void Affect(string id)
     {
-        selectedItemText.text = GameData.FindData(id, "ItemData", "name").ToString();
-        Texture2D texture = Resources.Load(DataManager.FindPath(id, usingDataset).ToString()) as Texture2D;
-        Rect rect = new Rect(0, 0, texture.width, texture.height);
-        selectedItemImage.sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
+        if(selectedItemText != null)
+            selectedItemText.text = DataManager.Find(id, "ItemData", "name").ToString();
+        if (selectedItemImage != null)
+        {
+            Debug.Log("만들어짐");
+            Texture2D texture = Resources.Load(DataManager.Find(id, usingDataset, "path").ToString()) as Texture2D;
+            Rect rect = new Rect(0, 0, texture.width, texture.height);
+            selectedItemImage.sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
+        }
     }
 }

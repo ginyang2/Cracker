@@ -5,9 +5,9 @@ using UnityEngine;
 public class DataManager
 {
     static List<Dictionary<string, object>> itemData = CSVReader.Read("ItemData");
-    static List<Dictionary<string, object>> skillData = CSVReader.Read("ItemData");
+    static List<Dictionary<string, object>> skillData = CSVReader.Read("SkillData");
 
-    public static object FindPath(string id, string dataset)
+    public static object Find(string id, string dataset, string findThing)  //경로 찾아주는 함수
     {
         List<Dictionary<string, object>> data;
 
@@ -30,8 +30,8 @@ public class DataManager
         {
             if (entry["id"].ToString() == id.ToString())
             {
-                Debug.Log("id : " + entry["id"] + "  entry : " + entry["path"]);
-                return entry["path"];
+                Debug.Log("id : " + entry["id"] + "  " + findThing + " : " + entry[findThing]);
+                return entry[findThing];
             }
         }
         return null;
