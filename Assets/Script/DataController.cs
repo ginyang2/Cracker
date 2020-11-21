@@ -28,7 +28,8 @@ public class DataController
     public static List<Weapon> weapons;//    //보유무기정보
     public static List<Skill> skills; //      //보유스킬정보
     public static InventoryData itemInventory; //아이템 인벤토리 
-    public static InventoryData skillInventory; //스킬 인벤토리
+    public static InventoryData skillInventory; //스킬 인벤토리 
+    public static InventoryData weaponInventory; //스킬 인벤토리
     public static PlayerSetting playerSetting;
     public static void SaveData()
     {
@@ -37,6 +38,7 @@ public class DataController
         File.WriteAllText(Application.dataPath + "/Floor.json", JsonUtility.ToJson(floorData));
         File.WriteAllText(Application.dataPath + "/ItemInventory.json", JsonUtility.ToJson(itemInventory));
         File.WriteAllText(Application.dataPath + "/SkillInventory.json", JsonUtility.ToJson(skillInventory));
+        File.WriteAllText(Application.dataPath + "/WeaponInventory.json", JsonUtility.ToJson(weaponInventory));
         File.WriteAllText(Application.dataPath + "/PlayerSetting.json", JsonUtility.ToJson(playerSetting));
         Debug.Log("저장 완료");
     }
@@ -50,6 +52,9 @@ public class DataController
 
         temp = File.ReadAllText(Application.dataPath + "/SkillInventory.json");
         skillInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
+
+        temp = File.ReadAllText(Application.dataPath + "/WeaponInventory.json");
+        weaponInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
 
         temp = File.ReadAllText(Application.dataPath + "/PlayerSetting.json");
         playerSetting = JsonUtility.FromJson<PlayerSetting>(temp.ToString());
@@ -66,6 +71,9 @@ public class DataController
             case "SkillInventory":
             case "Skill":
                 return skillInventory;
+            case "WeaponInventory":
+            case "Weapon":
+                return weaponInventory;
             default:
                 Debug.Log("잘못된 인벤토리 이름입니다");
                 return null;

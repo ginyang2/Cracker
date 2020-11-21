@@ -523,22 +523,12 @@ MonoBehaviour:
     moveSpeed: 5
     attackPower: 5
     attackSpeed: 1
-    weapon:
-      name: 
-      attackType: 
-      weaponType: 
-      elementType: 
-      attackPrefab: {fileID: 0}
-      range: 0
-      image: {fileID: 0}
   hp: {fileID: 0}
   targetPos: {x: 0, y: 0}
   isTouchRight: 0
   isTouchLeft: 0
   isTouchUp: 0
   isTouchDown: 0
-  strangth: 0
-  intelligence: 0
   animator: {fileID: 170130266}
   attackPrefab: {fileID: 0}
   attackTarget: {fileID: 0}

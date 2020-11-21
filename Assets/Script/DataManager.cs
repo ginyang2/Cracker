@@ -6,6 +6,7 @@ public class DataManager
 {
     static List<Dictionary<string, object>> itemData = CSVReader.Read("ItemData");
     static List<Dictionary<string, object>> skillData = CSVReader.Read("SkillData");
+    static List<Dictionary<string, object>> weaponData = CSVReader.Read("WeaponData");
 
     public static object Find(string id, string dataset, string findThing)  //경로 찾아주는 함수
     {
@@ -21,6 +22,10 @@ public class DataManager
             case "Skill":
                 data = skillData;
                 break;
+            case "WeaponData":
+            case "Weapon":
+                data = weaponData;
+                break;
             default:
                 Debug.Log("잘못된 데이터셋 이름입니다");
                 return null;
@@ -28,9 +33,9 @@ public class DataManager
 
         foreach (Dictionary<string, object> entry in data)
         {
-            if (entry["id"].ToString() == id.ToString())
+            if (entry["Id"].ToString() == id.ToString())
             {
-                Debug.Log("id : " + entry["id"] + "  " + findThing + " : " + entry[findThing]);
+                Debug.Log("Id : " + entry["Id"] + "  " + findThing + " : " + entry[findThing]);
                 return entry[findThing];
             }
         }

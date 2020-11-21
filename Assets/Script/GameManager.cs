@@ -99,8 +99,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++) {
             Debug.Log(DataController.playerSetting.skillsId[i]);
-            DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "prefab");
-            GameObject tmp = Instantiate(Resources.Load(DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "prefab") as string) as GameObject);
+            DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "Prefab");
+            GameObject tmp = Instantiate(Resources.Load(DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "Prefab") as string) as GameObject);
             skills[i] = tmp.GetComponent<Skill>();
          }
          //DataController.Instance.status

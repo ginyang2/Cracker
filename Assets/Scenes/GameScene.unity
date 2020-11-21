@@ -304,15 +304,6 @@ MonoBehaviour:
   score: 0
   gameOver: 0
   weapon:
-    name: 
-    power: 5
-    attackType: Short
-    weaponType: Sword
-    elementType: 
-    attackPrefab: {fileID: 5583880057162351559, guid: 6f3a24d09405b3f419848871188d00e2,
-      type: 3}
-    range: 2
-    image: {fileID: 0}
     rune: {fileID: 0}
   enemyNum: 0
   mapEvent: {fileID: 0}

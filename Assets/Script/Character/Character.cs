@@ -9,9 +9,9 @@ abstract public class Character : MonoBehaviour
 
     protected virtual void Start()
     {
-        hp.Initialize(status.healthPoint, status.healthPoint);
+        hp.Initialize(status.healthPoint, status.healthPoint);  //HP UI 초기화
     }
-
+    //HP감수 함수
     public virtual void MHP(int damage)
     {
         //Debug.Log("-" + damage);

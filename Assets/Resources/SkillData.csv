@@ -1,4 +1,4 @@
-id,name,path,prefab
+Id,Name,Path,Prefab
 1,BladWind,SkillImages/BladeWind,Prefabs/Skill/BladeWind
 2,GMDestroy,SkillImages/GMDestroy,Prefabs/Skill/GMDestroy
 3,Haste,SkillImages/Haste,Prefabs/Skill/Haste

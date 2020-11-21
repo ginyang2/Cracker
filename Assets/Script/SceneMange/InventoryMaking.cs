@@ -24,7 +24,7 @@ public class InventoryMaking : MonoBehaviour
     {
         var itemPannel = Instantiate(emptyPannel, basePannel.transform);
         var image = itemPannel.GetComponent<Image>();
-        Texture2D texture = Resources.Load(DataManager.Find(id,dataset,"path").ToString()) as Texture2D;
+        Texture2D texture = Resources.Load(DataManager.Find(id,dataset,"Path").ToString()) as Texture2D;
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         image.sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
         InventoryItemPannel itemPan = itemPannel.GetComponent<InventoryItemPannel>();

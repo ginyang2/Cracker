@@ -28,13 +28,14 @@ public class Player : Character
         status.weapon = GameManager.Instance.weapon;
         attackRangeCirecle.SetActive(false);
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        status.attackPower = status.weapon.Power;
+        status.attackPower = status.weapon.power;
         //HP,MPUI 초기화
         mp.Initialize(status.manaPoint, status.manaPoint);
         Time.timeScale = 1;
     }
     void Update()
     {
+        //hp가 0 이하면 사망처리
         if (hp.MyCurrentValue <= 0)
         {
             GameManager.Instance.gameOver = true;
@@ -46,8 +47,8 @@ public class Player : Character
             Move(); 
         }
     }
-
-    void InputKey()
+    //키입력 관리 함수
+    void InputKey() 
     {
         //이동
         if (Input.GetMouseButtonDown(1))
@@ -60,7 +61,7 @@ public class Player : Character
         {
             AttackReady(new Vector3(status.weapon.range, status.weapon.range));
             if (Input.GetMouseButtonDown(0) && !isAttack) {
-                if (status.weapon.AttackType == 0)
+                if (status.weapon.attackType == AttackType.Short)
                     StartCoroutine(Attack(mainCamera.ScreenToWorldPoint(Input.mousePosition)));
                 else
                 {
@@ -79,7 +80,7 @@ public class Player : Character
         UseSkill(KeyCode.E, 2);
         UseSkill(KeyCode.R, 3);
     }
-
+    //스킬사용 함수
     void UseSkill(KeyCode key, int skillIndex)
     {
         Skill skill = GameManager.Instance.skills[skillIndex];
@@ -99,7 +100,7 @@ public class Player : Character
         if (Input.GetKeyUp(key))
             attackRangeCirecle.SetActive(false);
     }
-
+    //이동 함수
     void Move()
     {
         float dis = Vector2.Distance(transform.position, targetPos);
@@ -119,24 +120,24 @@ public class Player : Character
             transform.localPosition = Vector2.MoveTowards(transform.position, currentTPos, status.moveSpeed * Time.deltaTime);
         }
     }
-
+    //공격, 스킬 키입력 후 대기시 호출
     void AttackReady(Vector3 size)
     {
         attackRangeCirecle.SetActive(true);
         attackRangeCirecle.transform.localScale = size;
     }
-
+    //공격 코루틴
     IEnumerator Attack(Vector2 targetPos)
     {
         isAttack = true;
         float angle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
         GameObject attackPrefab = Instantiate(status.weapon.attackPrefab, transform.position, Quaternion.identity);
-        if (status.weapon.AttackType == 0)
+        if (status.weapon.attackType == AttackType.Short)
         {
             angle -= 45;
             attackPrefab.transform.localScale = new Vector3(status.weapon.range, status.weapon.range);
         }
-        else if (status.weapon.AttackType == 1)
+        else if (status.weapon.attackType == AttackType.Long)
         {
             LongAttack longAttack = attackPrefab.GetComponent<LongAttack>();
             longAttack.targetPos = targetPos;
@@ -146,19 +147,36 @@ public class Player : Character
         yield return new WaitForSeconds(status.attackSpeed);
         isAttack = false;
     }
+    //MP감소
     public void MMP(float spend)
     {
         mp.MyCurrentValue -= spend;
     }
-
+    //좌표 직접적으로 변경 함수
     public void TP(Vector3 position)
     {
         transform.position = position;
         targetPos = transform.position;
     }
-
-    void InitialzeStatus()
+    //능력치 동기화 함수
+    private void InitialzeStatus()
     {
         //status = GameManager.Instance.status;
+    }
+    public void WeaponUpdate(string weaponId)
+    {
+        string name = DataManager.Find(weaponId, "Weapon", "Name").ToString();
+        int power = int.Parse(DataManager.Find(weaponId, "Weapon", "Power").ToString());
+        AttackType attackType = (AttackType)System.Enum.Parse(typeof(AttackType),DataManager.Find(weaponId, "Weapon", "AttackType").ToString());
+        //GameObject attackPrefab = Resources.Load(DataManager.Find(weaponId, "Weapon", "prefab") as string) as GameObject;
+        GameObject attackPrefab;
+        if (attackType == AttackType.Short)
+        {
+            attackPrefab = Resources.Load("Prefabs/Attack/ShortAttack") as GameObject;
+        }
+        else
+        {
+            attackPrefab = Resources.Load("Prefabs/Attack/LongAttck") as GameObject;
+        }
     }
 }

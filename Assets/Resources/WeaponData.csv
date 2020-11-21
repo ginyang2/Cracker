@@ -1,6 +1,5 @@
-id,name,path
-W1,조잡한 장검,WeaponImages/1
-W2,조잡한 단검,WeaponImages/2
-W3,조잡한 지팡이,WeaponImages/3
-W4,조잡한 장창,WeaponImages/4
-W5,조잡한 활,WeaponImages/5
+Id,Name,Path,Power,WeaponType,ElementType,AttackRange
+1,조잡한 장검,WeaponImages/1,5,Sword,None,1
+2,조잡한 단검,WeaponImages/2,5,Dagger,None,0.5
+3,조잡한 장창,WeaponImages/3,5,Sphere,None,2
+4,조잡한 활,WeaponImages/4,5,Bow,None,5
