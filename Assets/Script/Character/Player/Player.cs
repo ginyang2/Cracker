@@ -74,65 +74,29 @@ public class Player : Character
         if (Input.GetKeyUp(KeyCode.A))
             attackRangeCirecle.SetActive(false);
         //스킬 사용
-        if (Input.GetKey(KeyCode.Q) && GameManager.Instance.skills[0].targetting)
+        UseSkill(KeyCode.Q, 0);
+        UseSkill(KeyCode.W, 1);
+        UseSkill(KeyCode.E, 2);
+        UseSkill(KeyCode.R, 3);
+    }
+
+    void UseSkill(KeyCode key, int skillIndex)
+    {
+        Skill skill = GameManager.Instance.skills[skillIndex];
+        if (Input.GetKey(key) && skill.targetting)
         {
-            AttackReady(new Vector3(GameManager.Instance.skills[0].range, GameManager.Instance.skills[0].range));
-            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[0].Check(this))
+            AttackReady(new Vector3(skill.range, skill.range));
+            if (Input.GetMouseButtonDown(0) && skill.Check(this))
             {
-                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[0].range)
+                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < skill.range)
                 {
-                    StartCoroutine(GameManager.Instance.skills[0].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
+                    StartCoroutine(skill.UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Q) && GameManager.Instance.skills[0].Check(this))
-            StartCoroutine(GameManager.Instance.skills[0].UseSkill(this));
-        if (Input.GetKeyUp(KeyCode.Q))
-            attackRangeCirecle.SetActive(false);
-        if (Input.GetKey(KeyCode.W) && GameManager.Instance.skills[1].targetting)
-        {
-            AttackReady(new Vector3(GameManager.Instance.skills[1].range, GameManager.Instance.skills[1].range));
-            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[1].Check(this))
-            {
-                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[1].range)
-                {
-                    StartCoroutine(GameManager.Instance.skills[1].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
-                }
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.W) && GameManager.Instance.skills[1].Check(this))
-            StartCoroutine(GameManager.Instance.skills[1].UseSkill(this));
-        if (Input.GetKeyUp(KeyCode.W))
-            attackRangeCirecle.SetActive(false);
-        if (Input.GetKey(KeyCode.E) && GameManager.Instance.skills[2].targetting)
-        {
-            AttackReady(new Vector3(GameManager.Instance.skills[2].range, GameManager.Instance.skills[2].range));
-            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[2].Check(this))
-            {
-                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[2].range)
-                {
-                    StartCoroutine(GameManager.Instance.skills[2].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
-                }
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.skills[2].Check(this))
-            StartCoroutine(GameManager.Instance.skills[2].UseSkill(this));
-        if (Input.GetKeyUp(KeyCode.E))
-            attackRangeCirecle.SetActive(false);
-        if (Input.GetKey(KeyCode.R) && GameManager.Instance.skills[3].targetting)
-        {
-            AttackReady(new Vector3(GameManager.Instance.skills[3].range, GameManager.Instance.skills[3].range));
-            if (Input.GetMouseButtonDown(0) && GameManager.Instance.skills[3].Check(this))
-            {
-                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < GameManager.Instance.skills[3].range)
-                {
-                    StartCoroutine(GameManager.Instance.skills[3].UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
-                }
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.R) && GameManager.Instance.skills[3].Check(this))
-            StartCoroutine(GameManager.Instance.skills[3].UseSkill(this));
-        if (Input.GetKeyUp(KeyCode.R))
+        else if (Input.GetKeyDown(key) && skill.Check(this))
+            StartCoroutine(skill.UseSkill(this));
+        if (Input.GetKeyUp(key))
             attackRangeCirecle.SetActive(false);
     }
 
