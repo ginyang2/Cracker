@@ -10,7 +10,10 @@ public class DoorTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             if (!mapevent.clear && !mapevent.close)
-                mapevent.CloseDoor(collision.gameObject.GetComponent<Player>(),gameObject.name);
+            {
+                mapevent.CloseDoor(collision.gameObject.GetComponent<Player>(), gameObject.name);
+                Debug.Log(gameObject.name);
+            }
         }
     }
 }

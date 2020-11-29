@@ -22,7 +22,7 @@ public class LongAttack : Attack
         base.OnTriggerEnter2D(collision);
         if (collision.CompareTag("Enemy"))
         {
-            if (!pass)
+            Debug.Log(pass);
                 Destroy(gameObject);
         }
         if (collision.CompareTag("Wall"))

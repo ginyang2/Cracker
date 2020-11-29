@@ -12,7 +12,8 @@ public enum WeaponType
     Sword,
     Lance,
     Bow,
-    Wand
+    Wand,
+    Dagger
 }
 
 public enum ElementType
@@ -25,8 +26,17 @@ public enum ElementType
 }
 //무기의 능력치를 다룬다
 [System.Serializable]
-public struct Weapon
-{   
+public class Weapon
+{
+    public Weapon(string name, int power, WeaponType weaponType, float range, GameObject attackPrefab)
+    {
+        this.name = name;
+        this.power = power;
+        this.weaponType = weaponType;
+        this.attackType = weaponType == WeaponType.Bow ? AttackType.Long : AttackType.Short;
+        this.range = range;
+        this.attackPrefab = attackPrefab;
+    }
     readonly public string name;
     readonly public int power;
     readonly public AttackType attackType;
@@ -34,6 +44,6 @@ public struct Weapon
     readonly public ElementType elementType;
     readonly public GameObject attackPrefab;
     readonly public float range;
-    readonly public Sprite image;
+    public Sprite image;
     public Rune rune;
 }

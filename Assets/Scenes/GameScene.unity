@@ -304,6 +304,7 @@ MonoBehaviour:
   score: 0
   gameOver: 0
   weapon:
+    image: {fileID: 0}
     rune: {fileID: 0}
   enemyNum: 0
   mapEvent: {fileID: 0}
@@ -1610,6 +1611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maps:
   - {fileID: 4248573666236785837, guid: 79c0087cc5fa7894db9619223171bc94, type: 3}
+  - {fileID: 4248573666236785837, guid: dcfcb9d91883a004eae5d59d91b55443, type: 3}
+  - {fileID: 4248573666236785837, guid: f52e33c4fa2dfb441a5b7a416ca9fa87, type: 3}
   startMap: {fileID: 4248573666236785837, guid: 670b158503b98e3489e6f91038fbe051,
     type: 3}
   endMap: {fileID: 4248573666236785837, guid: 9c41e78c2849d5e47b6309180a54685c, type: 3}

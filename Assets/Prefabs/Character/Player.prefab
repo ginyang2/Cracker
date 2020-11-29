@@ -523,6 +523,9 @@ MonoBehaviour:
     moveSpeed: 5
     attackPower: 5
     attackSpeed: 1
+    weapon:
+      image: {fileID: 0}
+      rune: {fileID: 0}
   hp: {fileID: 0}
   targetPos: {x: 0, y: 0}
   isTouchRight: 0
@@ -545,7 +548,7 @@ Animator:
   m_GameObject: {fileID: 6411874193081888266}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dcf3f42830fa4b1499ffec2bd0d58dac, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

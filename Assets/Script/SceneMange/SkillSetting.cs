@@ -14,7 +14,7 @@ public class SkillSetting : ObjectScene
         //스킬 인벤토리
         inventoryMaker.basePannel = skillInventoryPannel;
         usingDataset = "Skill";
-        inventoryMaker.Initialize("Skill");
+        inventoryMaker.Initialize("Skill",this);
         Close();
         for (int i = 0; i < 4; i++)
         {

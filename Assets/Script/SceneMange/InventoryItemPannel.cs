@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventoryItemPannel : MonoBehaviour
 {
+    public ObjectScene sceneManager;
     public Item item = new Item();
     // Start is called before the first frame update
     void Start()
@@ -13,7 +14,6 @@ public class InventoryItemPannel : MonoBehaviour
 
     public void ClickAction()
     {
-        ObjectScene sceneManager = GameObject.FindObjectOfType<ObjectScene>();
         sceneManager.Affect(item.Id);
     }
 }

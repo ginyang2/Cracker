@@ -10,6 +10,7 @@ public class ObjectScene : MonoBehaviour
     public Image selectedItemImage;
     public Text selectedItemText;
     public GameObject selectedItem;
+    public GameObject emptyPannel;
 
     virtual protected void Start()
     {

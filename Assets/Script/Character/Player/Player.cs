@@ -26,9 +26,10 @@ public class Player : Character
         Debug.Log("Start");
         base.Start();
         status.weapon = GameManager.Instance.weapon;
+        WeaponUpdate(DataController.playerSetting.weaponId);
         attackRangeCirecle.SetActive(false);
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        status.attackPower = status.weapon.power;
+        status.attackPower = status.weapon.power;//공격력 설정
         //HP,MPUI 초기화
         mp.Initialize(status.manaPoint, status.manaPoint);
         Time.timeScale = 1;
@@ -134,7 +135,7 @@ public class Player : Character
         GameObject attackPrefab = Instantiate(status.weapon.attackPrefab, transform.position, Quaternion.identity);
         if (status.weapon.attackType == AttackType.Short)
         {
-            angle -= 45;
+            angle -= 180;
             attackPrefab.transform.localScale = new Vector3(status.weapon.range, status.weapon.range);
         }
         else if (status.weapon.attackType == AttackType.Long)
@@ -142,6 +143,7 @@ public class Player : Character
             LongAttack longAttack = attackPrefab.GetComponent<LongAttack>();
             longAttack.targetPos = targetPos;
         }
+        Debug.Log((int)status.attackPower);
         attackPrefab.GetComponent<Attack>().damage = (int)status.attackPower;
         attackPrefab.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         yield return new WaitForSeconds(status.attackSpeed);
@@ -165,10 +167,29 @@ public class Player : Character
     }
     public void WeaponUpdate(string weaponId)
     {
+        Debug.Log(weaponId);
         string name = DataManager.Find(weaponId, "Weapon", "Name").ToString();
+        Debug.Log(name);
         int power = int.Parse(DataManager.Find(weaponId, "Weapon", "Power").ToString());
-        AttackType attackType = (AttackType)System.Enum.Parse(typeof(AttackType),DataManager.Find(weaponId, "Weapon", "AttackType").ToString());
-        //GameObject attackPrefab = Resources.Load(DataManager.Find(weaponId, "Weapon", "prefab") as string) as GameObject;
+        Debug.Log(power);
+        WeaponType weaponType = (WeaponType)System.Enum.Parse(typeof(WeaponType), DataManager.Find(weaponId, "Weapon", "WeaponType").ToString());
+        AttackType attackType;
+        switch (weaponType)
+        {
+            case WeaponType.Sword:
+            case WeaponType.Lance:
+            case WeaponType.Wand:
+            case WeaponType.Dagger:
+                attackType = AttackType.Short;
+                break;
+            case WeaponType.Bow:
+                attackType = AttackType.Long;
+                break;
+            default:
+                attackType = AttackType.Short;
+                break;
+        }
+        Debug.Log(attackType.ToString());
         GameObject attackPrefab;
         if (attackType == AttackType.Short)
         {
@@ -176,7 +197,13 @@ public class Player : Character
         }
         else
         {
-            attackPrefab = Resources.Load("Prefabs/Attack/LongAttck") as GameObject;
+            attackPrefab = Resources.Load("Prefabs/Attack/LongAttack") as GameObject;
         }
+        if(attackPrefab == null)
+        {
+            Debug.Log("null");
+        }
+        float range = float.Parse(DataManager.Find(weaponId, "Weapon", "AttackRange").ToString());
+        status.weapon = new Weapon(name, power, weaponType, range, attackPrefab);
     }
 }

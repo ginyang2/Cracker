@@ -1,5 +1,5 @@
 Id,Name,Path,Power,WeaponType,ElementType,AttackRange
-1,조잡한 장검,WeaponImages/1,5,Sword,None,1
-2,조잡한 단검,WeaponImages/2,5,Dagger,None,0.5
-3,조잡한 장창,WeaponImages/3,5,Sphere,None,2
+1,조잡한 장검,WeaponImages/1,5,Sword,None,2
+2,조잡한 단검,WeaponImages/2,5,Dagger,None,1.5
+3,조잡한 장창,WeaponImages/3,5,Lance,None,2.5
 4,조잡한 활,WeaponImages/4,5,Bow,None,5

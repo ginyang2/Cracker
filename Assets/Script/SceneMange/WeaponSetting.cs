@@ -16,11 +16,10 @@ public class WeaponSetting : ObjectScene
         //무기 인벤토리
         inventoryMaker.basePannel = weaponInventoryPannel;
         usingDataset = "Weapon";
-        inventoryMaker.Initialize("Weapon");
+        inventoryMaker.Initialize("Weapon",this);
         Texture2D texture = Resources.Load(DataManager.Find(DataController.playerSetting.weaponId, usingDataset, "Path").ToString()) as Texture2D;
         Rect rect = new Rect(0, 0, texture.width, texture.height);
         weaponImage.sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
-        Debug.Log(DataManager.Find(DataController.playerSetting.weaponId, usingDataset, "Power").ToString());
         weaponPower.text = "공격력 : " + DataManager.Find(DataController.playerSetting.weaponId, usingDataset, "Power").ToString();
         weaponName.text = DataManager.Find(DataController.playerSetting.weaponId, usingDataset, "Name").ToString();
         Close();

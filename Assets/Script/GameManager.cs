@@ -48,9 +48,13 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPannel;
     public Text scoreText;
     public Text finalScoreText;
-    private void Start()
+    private void Awake()
     {
         DataController.Load();
+
+    }
+    private void Start()
+    {
         LoadGamedData();
         //Debug.Log("Manager Start");
         for (int i = 0; i < skills.Length; i++)
@@ -98,7 +102,6 @@ public class GameManager : MonoBehaviour
     private void LoadGamedData()
     {
         for (int i = 0; i < 4; i++) {
-            Debug.Log(DataController.playerSetting.skillsId[i]);
             DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "Prefab");
             GameObject tmp = Instantiate(Resources.Load(DataManager.Find(DataController.playerSetting.skillsId[i], "Skill", "Prefab") as string) as GameObject);
             skills[i] = tmp.GetComponent<Skill>();

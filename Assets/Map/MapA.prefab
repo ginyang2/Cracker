@@ -2576,6 +2576,7 @@ MonoBehaviour:
   enemys: []
   clear: 0
   close: 0
+  tpPosition: []
 --- !u!1 &4500093140740133974
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,7 +4682,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4568126242234317756}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

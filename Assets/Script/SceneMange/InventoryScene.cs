@@ -8,6 +8,6 @@ public class InventoryScene : ObjectScene
     {
         base.Start();
         usingDataset = "Item";
-        inventoryMaker.Initialize("Item");
+        inventoryMaker.Initialize("Item",this);
     }
 }
