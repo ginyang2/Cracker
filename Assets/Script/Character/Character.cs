@@ -16,5 +16,14 @@ abstract public class Character : MonoBehaviour
     {
         //Debug.Log("-" + damage);
         hp.MyCurrentValue -= damage;
+        StartCoroutine(Hit());
+    }
+    protected IEnumerator Hit()
+    {
+        Animator animator = gameObject.GetComponent<Animator>();
+        animator.SetBool("Hit", true);
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Hit", false);
+        yield return new WaitForEndOfFrame();
     }
 }

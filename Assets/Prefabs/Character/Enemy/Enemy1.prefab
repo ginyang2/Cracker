@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 4248738484661700276}
   - component: {fileID: 478396735}
   - component: {fileID: 3411659168227506675}
+  - component: {fileID: 5112571274152132106}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -288,14 +289,8 @@ MonoBehaviour:
     attackPower: 5
     attackSpeed: 1
     weapon:
-      name: 
-      power: 0
-      attackType: 
-      weaponType: 
-      elementType: 
-      attackPrefab: {fileID: 0}
-      range: 0
       image: {fileID: 0}
+      rune: {fileID: 0}
   hp: {fileID: 3441871778140269091}
   healthGroup: {fileID: 3650242626963351785}
   attackRange: 1
@@ -311,6 +306,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &5112571274152132106
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3334055901646456709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90069d39d2a9e0540ae90156cd68c83c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4318546593638989799
 GameObject:
   m_ObjectHideFlags: 0

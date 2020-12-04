@@ -23,7 +23,6 @@ public class ShortAttack : Attack
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        Debug.Log(collision.tag);
         if (collision.CompareTag("EnemyAttack"))
         {
             Destroy(collision.gameObject);
