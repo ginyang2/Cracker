@@ -29,34 +29,35 @@ public class DataController
     public static List<Skill> skills; //      //보유스킬정보
     public static InventoryData itemInventory; //아이템 인벤토리 
     public static InventoryData skillInventory; //스킬 인벤토리 
-    public static InventoryData weaponInventory; //스킬 인벤토리
+    public static InventoryData weaponInventory; //무기 인벤토리
     public static PlayerSetting playerSetting;
     public static void SaveData()
     {
-        File.WriteAllText(Application.dataPath + "/Skills.json", JsonUtility.ToJson(skills));
-        File.WriteAllText(Application.dataPath + "/Weapons.json", JsonUtility.ToJson(weapons));
-        File.WriteAllText(Application.dataPath + "/Floor.json", JsonUtility.ToJson(floorData));
-        File.WriteAllText(Application.dataPath + "/ItemInventory.json", JsonUtility.ToJson(itemInventory));
-        File.WriteAllText(Application.dataPath + "/SkillInventory.json", JsonUtility.ToJson(skillInventory));
-        File.WriteAllText(Application.dataPath + "/WeaponInventory.json", JsonUtility.ToJson(weaponInventory));
-        File.WriteAllText(Application.dataPath + "/PlayerSetting.json", JsonUtility.ToJson(playerSetting));
+        //JsonUtility.ToJson(Resources.)
+        //File.WriteAllText(Application.dataPath + "/Skills.json", JsonUtility.ToJson(skills));
+        //File.WriteAllText(Application.dataPath + "/Weapons.json", JsonUtility.ToJson(weapons));
+        //File.WriteAllText(Application.dataPath + "/Floor.json", JsonUtility.ToJson(floorData));
+        //File.WriteAllText(Application.dataPath + "/ItemInventory.json", JsonUtility.ToJson(itemInventory));
+        //File.WriteAllText(Application.dataPath + "/SkillInventory.json", JsonUtility.ToJson(skillInventory));
+        //File.WriteAllText(Application.dataPath + "/WeaponInventory.json", JsonUtility.ToJson(weaponInventory));
+        //File.WriteAllText(Application.dataPath + "/PlayerSetting.json", JsonUtility.ToJson(playerSetting));
         Debug.Log("저장 완료");
     }
     public static void Load()
     {
-        string temp = File.ReadAllText(Application.dataPath + "/ItemInventory.json");
+        TextAsset temp = Resources.Load("ItemInventory") as TextAsset;
         itemInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/Floor.json");
+        temp = Resources.Load("Floor") as TextAsset;
         floorData = JsonUtility.FromJson<FloorData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/SkillInventory.json");
-        skillInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
+        temp = Resources.Load("SkillInventory") as TextAsset;
+        itemInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/WeaponInventory.json");
+        temp = Resources.Load("WeaponInventory") as TextAsset;
         weaponInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/PlayerSetting.json");
+        temp = Resources.Load("PlayerSetting") as TextAsset;
         playerSetting = JsonUtility.FromJson<PlayerSetting>(temp.ToString());
         //Debug.Log("불러오기 완료");
     }
