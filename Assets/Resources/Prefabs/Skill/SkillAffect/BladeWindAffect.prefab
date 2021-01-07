@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2737298063053377254}
   - component: {fileID: 1838101687046550317}
   - component: {fileID: 1257941485119544038}
-  - component: {fileID: 885223919484090114}
+  - component: {fileID: 8175565956028425791}
   m_Layer: 0
   m_Name: BladeWindAffect
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 206955437
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ef05de103c32d5429ce2aca07322a5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 825c312a448b1b541b1ff995055c14e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   speed: 5
   pass: 0
   targetPos: {x: 0, y: 0}
---- !u!61 &885223919484090114
-BoxCollider2D:
+--- !u!58 &8175565956028425791
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,15 +113,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.9272218

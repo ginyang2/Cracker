@@ -58,7 +58,7 @@ public class DataController
 
         temp = File.ReadAllText(Application.dataPath + "/PlayerSetting.json");
         playerSetting = JsonUtility.FromJson<PlayerSetting>(temp.ToString());
-        Debug.Log("불러오기 완료");
+        //Debug.Log("불러오기 완료");
     }
 
     public static InventoryData FindInvetory(string InventoryName)

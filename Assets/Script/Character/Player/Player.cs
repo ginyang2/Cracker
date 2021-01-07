@@ -90,8 +90,9 @@ public class Player : Character
             AttackReady(new Vector3(skill.range, skill.range));
             if (Input.GetMouseButtonDown(0) && skill.Check(this))
             {
-                if (Vector2.Distance(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)) < skill.range)
+                if (skill.RangeCheck(transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition)))
                 {
+                    Debug.Log("스킬 실행");
                     StartCoroutine(skill.UseSkill(this, mainCamera.ScreenToWorldPoint(Input.mousePosition)));
                 }
             }
@@ -143,7 +144,6 @@ public class Player : Character
             LongAttack longAttack = attackPrefab.GetComponent<LongAttack>();
             longAttack.targetPos = targetPos;
         }
-        Debug.Log((int)status.attackPower);
         attackPrefab.GetComponent<Attack>().damage = (int)status.attackPower;
         attackPrefab.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         yield return new WaitForSeconds(status.attackSpeed);

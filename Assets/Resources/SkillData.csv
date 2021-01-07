@@ -4,3 +4,4 @@ Id,Name,Path,Prefab
 3,Haste,SkillImages/Haste,Prefabs/Skill/Haste
 4,Heal,SkillImages/Heal,Prefabs/Skill/Heal
 5,Thrust,SkillImages/Thrust,Prefabs/Skill/Thrust
+6,FireStorm,SkillImages/FireStorm,Prefabs/Skill/FireStorm
