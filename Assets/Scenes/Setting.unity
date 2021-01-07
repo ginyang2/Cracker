@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1004,9 +1004,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0
-  basePannel: {fileID: 1923703489}
   emptyPannel: {fileID: 7542976617466344224, guid: d494dddebc959f14e982810b3d1c3c61,
     type: 3}
+  basePannel: {fileID: 1923703489}
 --- !u!114 &720431819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,7 +1022,6 @@ MonoBehaviour:
   selectedItemImage: {fileID: 0}
   selectedItemText: {fileID: 0}
   selectedItem: {fileID: 0}
-  emptyPannel: {fileID: 0}
   skillInventory: {fileID: 1694475354}
   skillInventoryPannel: {fileID: 1923703489}
   skillsButton:
@@ -1059,7 +1058,6 @@ MonoBehaviour:
   selectedItemImage: {fileID: 0}
   selectedItemText: {fileID: 0}
   selectedItem: {fileID: 0}
-  emptyPannel: {fileID: 0}
   weaponInventroy: {fileID: 1845308677}
   weaponInventoryPannel: {fileID: 1134417469}
   weaponImage: {fileID: 890251438}
@@ -1113,7 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

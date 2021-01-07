@@ -12,7 +12,7 @@ public class LongAttack : Attack
         float dis = Vector2.Distance(transform.position, targetPos);
         if (dis >= 0.01f) // 차이가 아직 있다면
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+            transform.localPosition = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         }
         else
             Destroy(gameObject);
@@ -22,7 +22,7 @@ public class LongAttack : Attack
         base.OnTriggerEnter2D(collision);
         if (collision.CompareTag("Enemy"))
         {
-            if (!pass)
+            Debug.Log(pass);
                 Destroy(gameObject);
         }
         if (collision.CompareTag("Wall"))

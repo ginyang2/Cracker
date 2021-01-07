@@ -8,7 +8,6 @@ TagManager:
   - Enemy
   - EnemyAttack
   - Attack
-  - PushEnd
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Tilemaps;
 //플레이어가 던전에 입장할 때 던전을 생성할 때 사용된다.
 public class LevelManager : MonoBehaviour
 {

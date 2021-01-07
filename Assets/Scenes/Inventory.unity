@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -666,8 +666,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedItemImage: {fileID: 1948459705}
   selectedItemText: {fileID: 279685137}
-  selectedItem: {fileID: 0}
-  emptyPannel: {fileID: 0}
 --- !u!114 &1910648232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,9 +679,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0
-  basePannel: {fileID: 165406168}
   emptyPannel: {fileID: 7542976617466344224, guid: d494dddebc959f14e982810b3d1c3c61,
     type: 3}
+  basePannel: {fileID: 165406168}
 --- !u!4 &1910648233
 Transform:
   m_ObjectHideFlags: 0

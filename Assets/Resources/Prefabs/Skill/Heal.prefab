@@ -45,13 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetting: 0
   skillImage: {fileID: 0}
-  skillImageSetting: {fileID: 21300000, guid: 6b7b2dfb0e77c0d4ea464a5b89baf579, type: 3}
-  spendMana: 2
-  coolTime: 10
+  skillImageSetting: {fileID: 21300000, guid: 7cb90fc455d38644ca8b4458230c8ac5, type: 3}
+  spendMana: 5
+  coolTime: 30
   cooldown: 0
-  ismelee: 0
   range: 0
-  isRangeCheck: 0
   healPower: 5
-  healAffect: {fileID: 5560789089786076614, guid: af571d3766c232b4ea6aa8779b50bf48,
-    type: 3}

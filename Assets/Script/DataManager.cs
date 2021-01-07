@@ -35,7 +35,7 @@ public class DataManager
         {
             if (entry["Id"].ToString() == id.ToString())
             {
-                //Debug.Log("Id : " + entry["Id"] + "  " + findThing + " : " + entry[findThing]);
+                Debug.Log("Id : " + entry["Id"] + "  " + findThing + " : " + entry[findThing]);
                 return entry[findThing];
             }
         }

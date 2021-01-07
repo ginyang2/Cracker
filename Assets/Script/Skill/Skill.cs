@@ -12,10 +12,8 @@ abstract public class Skill:MonoBehaviour
     public float spendMana;
     public float coolTime;
     public bool cooldown = false;
-    public bool ismelee = false;
     public int range;
-    [SerializeField]
-    private bool isRangeCheck;
+
     virtual public IEnumerator UseSkill(Player player)
     {
         skillImage.fillAmount = 0;
@@ -33,7 +31,7 @@ abstract public class Skill:MonoBehaviour
         yield return null;
     }
 
-    virtual public bool Check(Player player)
+    public bool Check(Player player)
     {
         //쿨타임중인가?
         if (cooldown)
@@ -42,14 +40,6 @@ abstract public class Skill:MonoBehaviour
         if (player.mp.MyCurrentValue < spendMana)
             return false;
         return true;
-    }
-
-    virtual public bool RangeCheck(Vector2 playerPosition, Vector2 clickPoint){
-        Debug.Log(isRangeCheck);
-        if (isRangeCheck)
-            return Vector2.Distance(playerPosition, clickPoint) < range;
-        else
-            return true;
     }
 
     protected void Initialize(float setSpendMana,float setCoolTIme)
