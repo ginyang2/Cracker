@@ -44,21 +44,21 @@ public class DataController
     }
     public static void Load()
     {
-        string temp = File.ReadAllText(Application.dataPath + "/ItemInventory.json");
+        TextAsset temp = Resources.Load("ItemInventory") as TextAsset;
         itemInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/Floor.json");
+        temp = temp = Resources.Load("Floor") as TextAsset;
         floorData = JsonUtility.FromJson<FloorData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/SkillInventory.json");
+        temp = temp = Resources.Load("SkillInventory") as TextAsset;
         skillInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/WeaponInventory.json");
+        temp = Resources.Load("WeaponInventory") as TextAsset;
         weaponInventory = JsonUtility.FromJson<InventoryData>(temp.ToString());
 
-        temp = File.ReadAllText(Application.dataPath + "/PlayerSetting.json");
+        temp = temp = Resources.Load("PlayerSetting") as TextAsset;
         playerSetting = JsonUtility.FromJson<PlayerSetting>(temp.ToString());
-        //Debug.Log("불러오기 완료");
+        Debug.Log("불러오기 완료");
     }
 
     public static InventoryData FindInvetory(string InventoryName)
